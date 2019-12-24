@@ -1,10 +1,19 @@
-# Mathias’s dotfiles
-
+# Dan’s Setup & Dotfiles
+forked from `mathiasbynens/dotfiles` and extended with `bradp/setup.sh`
 ![Screenshot of my shell prompt](https://i.imgur.com/EkEtphC.png)
 
 ## Installation
 
 **Warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
+
+### Install new Mac
+To install and setup a new Mac run the following script:
+
+```bash
+cd; curl -sSL https://github.com/dansailer/dotfiles/setup.sh | bash
+```
+
+To update later on, just run that command again.
 
 ### Using Git and the bootstrap script
 
