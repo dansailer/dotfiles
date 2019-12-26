@@ -1,106 +1,177 @@
-" Use the Solarized Dark theme
+"	          ██
+"	         ░░
+"	 ██    ██ ██ ██████████  ██████  █████
+"	░██   ░██░██░░██░░██░░██░░██░░█ ██░░░██
+"	░░██ ░██ ░██ ░██ ░██ ░██ ░██ ░ ░██  ░░
+"	 ░░████  ░██ ░██ ░██ ░██ ░██   ░██   ██
+"	  ░░██   ░██ ███ ░██ ░██░███   ░░█████
+"	   ░░    ░░ ░░░  ░░  ░░ ░░░     ░░░░░
+
+" ==============================
+"	Init
+" ==============================
+"
+set nocompatible
+set noshowmode
+syntax on
+
+" ==============================
+" Plugins
+" ==============================
+"
+" call plug#begin('~/dotfiles/.vim/plugged')
+
+" Plug 'rking/ag.vim'
+" Plug 'kien/ctrlp.vim'
+" Plug 'myusuf3/numbers.vim'
+" Plug 'shawncplus/phpcomplete.vim'
+" Plug 'ervandew/supertab'
+" Plug 'scrooloose/syntastic'
+" Plug 'tomtom/tcomment_vim'
+" Plug 'bling/vim-airline'
+" Plug 'altercation/vim-colors-solarized'
+" Plug 'tpope/vim-fugitive'
+" Plug 'airblade/vim-gitgutter'
+" Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'tpope/vim-sensible'
+" Plug 'mhinz/vim-startify'
+" Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-vinegar'
+" Plug 'tpope/vim-unimpaired'
+" Plug 'tpope/vim-fugitive'
+" Plug 'ap/vim-css-color'
+" Plug 'scrooloose/nerdcommenter'
+" Plug 'ludovicchabant/vim-gutentags'
+" Plug 'terryma/vim-multiple-cursors'
+" Plug 'fatih/vim-go'
+" Plug 'majutsushi/tagbar'
+" Plug 'bronson/vim-trailing-whitespace'
+" Plug 'junegunn/goyo.vim'
+
+" call plug#end()
+
+"
+" ==============================
+"	Interface Settings
+" ==============================
+"
+set number " Display line numbers on the left
+set colorcolumn=81,121 " Set a column at 81 chars wide
+set encoding=utf-8 nobomb
+set noerrorbells " Disable error bells
+set guifont=Inconsolata\ for\ Powerline
+let g:syntastic_always_populate_loc_list = 1
+set confirm " confim instead of error when leaving unsaved file
+set mouse=a " Enable use of the mouse for all modes
+let g:startify_custom_header = map(split(system('fortune -as | cowsay -f small'), '\n'), '"   ". v:val') + ['','']
+let g:startify_change_to_vcs_root = 1
+let g:ctrlp_reuse_window  = 'startify'
+set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_ " Show “invisible” characters
+set list
+set cursorline " Highlight current line
+set tabstop=4 " Make tabs as wide as two spaces
+
+"
+" ==============================
+"	Color Scheme
+" ==============================
+"
+syntax enable
 set background=dark
 colorscheme solarized
-let g:solarized_termtrans=1
+syntax on " Enable syntax highlighting
+let g:solarized_termcolors=256
+let macvim_skip_colorscheme=1
+" let g:solarized_termtrans=1
 
-" Make Vim more useful
-set nocompatible
-" Use the OS clipboard by default (on versions compiled with `+clipboard`)
-set clipboard=unnamed
-" Enhance command-line completion
-set wildmenu
-" Allow cursor keys in insert mode
-set esckeys
-" Allow backspace in insert mode
-set backspace=indent,eol,start
-" Optimize for fast terminal connections
-set ttyfast
-" Add the g flag to search/replace by default
-set gdefault
-" Use UTF-8 without BOM
-set encoding=utf-8 nobomb
-" Change mapleader
-let mapleader=","
-" Don’t add empty newlines at the end of files
+
+"
+" ==============================
+"	Search
+" ==============================
+"
+set hlsearch " highlight all results of a search
+set incsearch " highlight first result of search whilst typing
+set ignorecase " Use case insensitive search
+set smartcase  "except when using capital letters
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+"
+" ==============================
+"	Airline Settings
+" ==============================
+"
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#hunks#enabled=0
+let g:airline_section_x='%{fugitive#statusline()}'
+let g:airline_section_y=''
+let g:airline_theme='dark'
+let g:Powerline_symbols = 'fancy'
+
+"
+" ==============================
+"	Misc Settings
+" ==============================
+"
+set noswapfile " eff swp files
+set nobackup
+set nowritebackup
+set lazyredraw
 set binary
 set noeol
-" Centralize backups, swapfiles and undo history
-set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
-if exists("&undodir")
-	set undodir=~/.vim/undo
-endif
 
-" Don’t create backups when editing files in certain directories
-set backupskip=/tmp/*,/private/tmp/*
+let g:syntastic_php_checkers = ['php', 'phpcs']
+let g:syntastic_php_phpcs_args="--report=csv --standard=WordPress"
 
-" Respect modeline in files
-set modeline
-set modelines=4
-" Enable per-directory .vimrc files and disable unsafe commands in them
-set exrc
-set secure
-" Enable line numbers
-set number
-" Enable syntax highlighting
-syntax on
-" Highlight current line
-set cursorline
-" Make tabs as wide as two spaces
-set tabstop=2
-" Show “invisible” characters
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
-set list
-" Highlight searches
-set hlsearch
-" Ignore case of searches
-set ignorecase
-" Highlight dynamically as pattern is typed
-set incsearch
-" Always show status line
-set laststatus=2
-" Enable mouse in all modes
-set mouse=a
-" Disable error bells
-set noerrorbells
-" Don’t reset cursor to start of line when moving around.
-set nostartofline
-" Show the cursor position
-set ruler
-" Don’t show the intro message when starting Vim
-set shortmess=atI
-" Show the current mode
-set showmode
-" Show the filename in the window titlebar
-set title
-" Show the (partial) command as it’s being typed
-set showcmd
-" Use relative line numbers
-if exists("&relativenumber")
-	set relativenumber
-	au BufReadPost * set relativenumber
-endif
-" Start scrolling three lines before the horizontal window border
-set scrolloff=3
+let g:phpcomplete_parse_docblock_comments = 1
 
-" Strip trailing whitespace (,ss)
-function! StripWhitespace()
-	let save_cursor = getpos(".")
-	let old_query = getreg('/')
-	:%s/\s\+$//e
-	call setpos('.', save_cursor)
-	call setreg('/', old_query)
-endfunction
-noremap <leader>ss :call StripWhitespace()<CR>
-" Save a file as root (,W)
-noremap <leader>W :w !sudo tee % > /dev/null<CR>
+let g:go_fmt_command = "goimports"
 
-" Automatic commands
-if has("autocmd")
-	" Enable file type detection
-	filetype on
-	" Treat .json files as .js
-	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
-	" Treat .md files as Markdown
-	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
-endif
+
+"
+" ==============================
+"	Keybindings and Mappings
+" ==============================
+"
+let mapleader = "\<Space>"
+let g:mapleader = "\<Space>"
+
+noremap <leader>W :w !sudo tee % > /dev/null<CR> " Save a file as root (,W)
+
+nmap <leader>q :q!<cr>
+nmap <leader>w :w!<cr>
+nmap <leader>s :w!<cr>
+nmap <leader>/ <leader>c<space><cr>
+nmap <leader>g :Gstatus<cr>
+nmap <leader>t :TagbarToggle<cr>
+
+nnoremap <silent> ]c /\v^(\<\|\=\|\>){7}([^=].+)?$<CR>
+nnoremap <silent> [c ?\v^(\<\|\=\|\>){7}([^=].+)\?$<CR>
+nnoremap ; :
+
+inoremap jk <esc> " jk is escape
+
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+
+nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F4> :NumbersOnOff<CR>
+
+command Wq wq
+command Q q
+command W w
+
+let g:UltiSnipsExpandTrigger="<tab-x>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+nmap q :nohlsearch<CR>
