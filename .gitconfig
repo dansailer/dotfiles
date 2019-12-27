@@ -8,9 +8,13 @@
 #    ░░░░░  ░░    ░░   ░░░░░   ░░░░░░  ░░░   ░░   ░░   ░░  ░░░░░
 
 [user]
-    # name = Brad Parbs
-    # email = brad@bradparbs.com
-    # github = bradp
+    name = Daniel Sailer
+    email = daniel@sailer.com.au
+    github = dansailer
+
+[credential]
+    helper = osxkeychain
+
 [core]
     editor = vim
     excludesfile = ~/dotfiles/.gitignore
@@ -66,6 +70,14 @@
     added = yellow
     changed = green
     untracked = cyan
+
+[difftool "sourcetree"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path = 
+
+[mergetool "sourcetree"]
+    cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
 
 [alias]
     # Remove branches that have already been merged with master
