@@ -96,6 +96,10 @@ apps=(
 # Install apps to /Applications
 brew cask install --appdir="/Applications" ${apps[@]}
 
+print -P "\n%F{green}Install fonts...%f"
+brew tap homebrew/cask-fonts
+brew cask install font-roboto font-robotomono-nerd-font-mono font-robotomono-nerd-font font-roboto-mono-for-powerline font-sourcecodepro-nerd-font-mono font-source-code-pro-for-powerline font-source-code-pro font-sourcecodepro-nerd-font
+
 print -P "\n%F{green}Cleaning up Brew...%f"
 brew cleanup
 

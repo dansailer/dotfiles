@@ -39,10 +39,17 @@ plugins=(
 	vagrant
 	z
 	zsh-syntax-highlighting
+    docker
+    docker-compose
+    kubectl
+    minikube
+    npm
+    yarn
+    jira
 )
 
 source $ZSH/oh-my-zsh.sh
-for file in $HOME/dotfiles/sourced/*; do
+for file in $HOME/.dotfiles/sourced/*; do
    source "$file"
 done
 
@@ -57,18 +64,12 @@ PATH=${PATH}:/bin
 PATH=${PATH}:/usr/sbin
 PATH=${PATH}:/sbin
 PATH=${PATH}:/usr/local/git/bin
-PATH=${PATH}:/opt/sm/bin
-PATH=${PATH}:/opt/sm/pkg/active/bin
-PATH=${PATH}:/opt/sm/pkg/active/sbin
-PATH=${PATH}:/usr/local/heroku/bin
-PATH=${PATH}:"$HOME"/dotfiles/misc
-PATH=${PATH}:"$HOME"/dotfiles/bin
-PATH=${PATH}:"$HOME"/dotfiles/bin/t
-PATH=${PATH}:"$HOME"/.composer/vendor/bin
+PATH=${PATH}:"$HOME"/.dotfiles/misc
+PATH=${PATH}:"$HOME"/.dotfiles/bin
+PATH=${PATH}:"$HOME"/.dotfiles/bin/t
 PATH=${PATH}:"$HOME"/go/bin
 PATH=${PATH}:"$HOME"/.yarn/bin
 PATH=${PATH}:"/usr/local/sbin"
 PATH=${PATH}:"usr/local/share/npm/bin"
-PATH=${PATH}:"$HOME"/Dropbox/Working/chassis
 
 export PATH=${PATH}
