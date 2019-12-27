@@ -62,7 +62,7 @@ set noerrorbells " Disable error bells
 set guifont=Inconsolata\ for\ Powerline
 let g:syntastic_always_populate_loc_list = 1
 set confirm " confim instead of error when leaving unsaved file
-set mouse=a " Enable use of the mouse for all modes
+"set mouse=a " Enable use of the mouse for all modes
 let g:startify_custom_header = map(split(system('fortune -as | cowsay -f small'), '\n'), '"   ". v:val') + ['','']
 let g:startify_change_to_vcs_root = 1
 let g:ctrlp_reuse_window  = 'startify'
@@ -78,7 +78,6 @@ set tabstop=4 " Make tabs as wide as two spaces
 "
 syntax enable
 set background=dark
-colorscheme solarized
 syntax on " Enable syntax highlighting
 let g:solarized_termcolors=256
 let macvim_skip_colorscheme=1
@@ -110,12 +109,12 @@ endif
 "	Airline Settings
 " ==============================
 "
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#hunks#enabled=0
-let g:airline_section_x='%{fugitive#statusline()}'
-let g:airline_section_y=''
-let g:airline_theme='dark'
-let g:Powerline_symbols = 'fancy'
+"let g:airline_powerline_fonts = 1
+"let g:airline#extensions#hunks#enabled=0
+"let g:airline_section_x='%{fugitive#statusline()}'
+"let g:airline_section_y=''
+"let g:airline_theme='dark'
+"let g:Powerline_symbols = 'fancy'
 
 "
 " ==============================
@@ -129,12 +128,12 @@ set lazyredraw
 set binary
 set noeol
 
-let g:syntastic_php_checkers = ['php', 'phpcs']
-let g:syntastic_php_phpcs_args="--report=csv --standard=WordPress"
+"let g:syntastic_php_checkers = ['php', 'phpcs']
+"let g:syntastic_php_phpcs_args="--report=csv --standard=WordPress"
 
-let g:phpcomplete_parse_docblock_comments = 1
+"let g:phpcomplete_parse_docblock_comments = 1
 
-let g:go_fmt_command = "goimports"
+"let g:go_fmt_command = "goimports"
 
 
 "
