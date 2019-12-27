@@ -8,7 +8,7 @@
 #	░░░░░░ ░░░░░░  ░░   ░░ ░░░     ░░░░░
 
 ZSH=$HOME/dotfiles/.oh-my-zsh # Path to your oh-my-zsh configuration.
-#ZSH_THEME="brad-muse" # Set name of the theme to load.
+ZSH_THEME=powerlevel10k/powerlevel10k
 
 #DEFAULT_USER="bradparbs@bradparbs"
 COMPLETION_WAITING_DOTS="true"
