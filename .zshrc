@@ -13,7 +13,7 @@ ZSH_THEME=powerlevel10k/powerlevel10k
 #DEFAULT_USER="bradparbs@bradparbs"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_UPDATE=true
-ZSH_CUSTOM=$HOME/dotfiles/zsh-custom
+ZSH_CUSTOM=$HOME/.dotfiles/zsh-custom
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
 
