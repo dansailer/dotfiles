@@ -31,23 +31,29 @@ print -P "\n%F{green}Updating Homebrew recipes...%f"
 brew update
 
 print -P "\n%F{green}Installing Git recipes...%f"
-brew install git
-brew install git-extras
-brew install legit
-brew install git-flow
-brew install tree
-brew install wget
-brew install trash
-brew install mackup
-brew install node
-brew install curl
-brew install the_silver_searcher
-brew install minikube
-brew install hugo
-brew install jq
-brew install unzip
-brew install bash-completion
-brew install zsh
+apps=(
+  git
+  git-extras
+  git-flow
+  legit
+  tree
+  wget
+  curl
+  jq
+  unzip
+  grep
+  gnu-sed
+  trash
+  mackup
+  node
+  the_silver_searcher
+  minikube
+  hugo
+  bash-completion
+  zsh
+  neofetch
+)
+brew install ${apps[@]}
 
 print -P "\n%F{green}Configuring Git...%f"
 git config --global user.name "Brad Parbs"
@@ -92,13 +98,22 @@ apps=(
   sequel-pro
   qlmarkdown
   suspicious-package
+  cyberduck
+  robo-3t
+  goland
+  springtoolsuite
+  balenaetcher
+  https://www.corecode.io/macupdater/casks/citrix-workspace.rb
+  ubiquiti-unifi-controller
+  tiptoi-manager
 )
 # Install apps to /Applications
+brew tap homebrew/cask-drivers
 brew cask install --appdir="/Applications" ${apps[@]}
 
 print -P "\n%F{green}Install fonts...%f"
 brew tap homebrew/cask-fonts
-brew cask install font-roboto font-robotomono-nerd-font-mono font-robotomono-nerd-font font-roboto-mono-for-powerline font-sourcecodepro-nerd-font-mono font-source-code-pro-for-powerline font-source-code-pro font-sourcecodepro-nerd-font
+brew cask install font-roboto font-robotomono-nerd-font-mono font-robotomono-nerd-font font-roboto-mono-for-powerline font-sourcecodepro-nerd-font-mono font-source-code-pro-for-powerline font-source-code-pro font-sourcecodepro-nerd-font font-liberation-mono-for-powerline font-liberation-sans font-liberationmono-nerd-font font-liberationmono-nerd-font-mono
 
 print -P "\n%F{green}Cleaning up Brew...%f"
 brew cleanup
