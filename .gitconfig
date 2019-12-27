@@ -17,8 +17,8 @@
 
 [core]
     editor = vim
-    excludesfile = ~/dotfiles/.gitignore
-    attributesfile = ~/dotfiles//.gitattributes
+    excludesfile = ~/.dotfiles/.global-ignore
+    attributesfile = ~/.dotfiles/.gitattributes
 
     # Enable parallel I/O for operations like "git diff".
     preloadindex = true

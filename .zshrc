@@ -7,7 +7,7 @@
 #	 ██████ ██████ ░██  ░██░███   ░░█████
 #	░░░░░░ ░░░░░░  ░░   ░░ ░░░     ░░░░░
 
-ZSH=$HOME/dotfiles/.oh-my-zsh # Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh # Path to your oh-my-zsh configuration.
 ZSH_THEME=powerlevel10k/powerlevel10k
 
 #DEFAULT_USER="bradparbs@bradparbs"
@@ -22,23 +22,16 @@ setopt APPEND_HISTORY
 setopt INTERACTIVE_COMMENTS
 
 plugins=(
-	brew
-	brew-cask
-	git
-	git-extras
-	github
-	lol
-	nyan
+    git
+    git-extras
+    github
     node
-	osx
-	parbs-sites
+    osx
     rake
     python
-    javascript
-    bash
-	vagrant
-	z
-	zsh-syntax-highlighting
+    vagrant
+    z
+    zsh-syntax-highlighting
     docker
     docker-compose
     kubectl
@@ -73,3 +66,6 @@ PATH=${PATH}:"/usr/local/sbin"
 PATH=${PATH}:"usr/local/share/npm/bin"
 
 export PATH=${PATH}
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
