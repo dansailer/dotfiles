@@ -36,8 +36,8 @@ export MANPAGER="less -X";
 export LESS_TERMCAP_md="${yellow}"; # Highlight section titles in manual pages.
 export GREP_OPTIONS="--color=auto";
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-
 export GOPATH="$HOME/go"
+export DOCKER_HOST=unix:///var/run/docker.sock
 
 #########################################
 # zsh-specific                          #

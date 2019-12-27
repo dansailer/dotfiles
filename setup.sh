@@ -35,6 +35,7 @@ apps=(
   git
   git-extras
   git-flow
+  git-lfs
   legit
   tree
   wget

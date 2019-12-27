@@ -8,13 +8,11 @@
 #
 # Note that binary is a macro for -text -diff.
 ######################################################################
-
 # Auto detect
 ##   Handle line endings automatically for files detected as
 ##   text and leave all files detected as binary untouched.
 ##   This will handle all files NOT defined below.
 *                 text=auto
-
 # Source code
 *.bash            text eol=lf
 *.bat             text eol=crlf
@@ -49,11 +47,9 @@
 *.tsx             text
 *.xml             text
 *.xhtml           text diff=html
-
 # Docker
 *.dockerignore    text
 Dockerfile        text
-
 # Documentation
 *.ipynb           text
 *.markdown        text
@@ -79,7 +75,6 @@ NEWS              text
 readme            text
 *README*          text
 TODO              text
-
 # Templates
 *.dot             text
 *.ejs             text
@@ -96,7 +91,6 @@ TODO              text
 *.tpl             text
 *.twig            text
 *.vue             text
-
 # Linters
 .csslintrc        text
 .eslintrc         text
@@ -105,7 +99,6 @@ TODO              text
 .jshintrc         text
 .jshintignore     text
 .stylelintrc      text
-
 # Configs
 *.bowerrc         text
 *.cnf             text
@@ -126,11 +119,9 @@ package-lock.json text -diff
 browserslist      text
 Makefile          text
 makefile          text
-
 # Heroku
 Procfile          text
 .slugignore       text
-
 # Graphics
 *.ai              binary
 *.bmp             binary
@@ -158,7 +149,6 @@ Procfile          text
 *.tiff            binary
 *.wbmp            binary
 *.webp            binary
-
 # Audio
 *.kar             binary
 *.m4a             binary
@@ -167,7 +157,6 @@ Procfile          text
 *.mp3             binary
 *.ogg             binary
 *.ra              binary
-
 # Video
 *.3gpp            binary
 *.3gp             binary
@@ -186,7 +175,6 @@ Procfile          text
 *.swc             binary
 *.swf             binary
 *.webm            binary
-
 # Archives
 *.7z              binary
 *.gz              binary
@@ -194,15 +182,13 @@ Procfile          text
 *.rar             binary
 *.tar             binary
 *.zip             binary
-
 # Fonts
 *.ttf             binary
 *.eot             binary
 *.otf             binary
 *.woff            binary
 *.woff2           binary
-
 # Executables
 *.exe             binary
 *.pyc             binary
-
+*.app filter=lfs diff=lfs merge=lfs -text
