@@ -78,7 +78,6 @@ set tabstop=4 " Make tabs as wide as two spaces
 "
 syntax enable
 set background=dark
-colorscheme solarized
 syntax on " Enable syntax highlighting
 let g:solarized_termcolors=256
 let macvim_skip_colorscheme=1
