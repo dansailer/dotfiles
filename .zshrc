@@ -29,8 +29,13 @@ plugins=(
 	github
 	lol
 	nyan
+    node
 	osx
 	parbs-sites
+    rake
+    python
+    javascript
+    bash
 	vagrant
 	z
 	zsh-syntax-highlighting
