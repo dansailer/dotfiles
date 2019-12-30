@@ -19,36 +19,25 @@ syntax on
 " Plugins
 " ==============================
 "
-" call plug#begin('~/dotfiles/.vim/plugged')
+call plug#begin('~/.dotfiles/.vim/plugged')
 
-" Plug 'rking/ag.vim'
-" Plug 'kien/ctrlp.vim'
-" Plug 'myusuf3/numbers.vim'
-" Plug 'shawncplus/phpcomplete.vim'
-" Plug 'ervandew/supertab'
-" Plug 'scrooloose/syntastic'
-" Plug 'tomtom/tcomment_vim'
-" Plug 'bling/vim-airline'
-" Plug 'altercation/vim-colors-solarized'
-" Plug 'tpope/vim-fugitive'
-" Plug 'airblade/vim-gitgutter'
-" Plug 'nathanaelkane/vim-indent-guides'
-" Plug 'tpope/vim-sensible'
-" Plug 'mhinz/vim-startify'
-" Plug 'tpope/vim-surround'
-" Plug 'tpope/vim-vinegar'
-" Plug 'tpope/vim-unimpaired'
-" Plug 'tpope/vim-fugitive'
-" Plug 'ap/vim-css-color'
-" Plug 'scrooloose/nerdcommenter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tpope/vim-sensible'
+Plug 'ap/vim-css-color'
+Plug 'scrooloose/nerdcommenter'
 " Plug 'ludovicchabant/vim-gutentags'
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'fatih/vim-go'
 " Plug 'majutsushi/tagbar'
 " Plug 'bronson/vim-trailing-whitespace'
 " Plug 'junegunn/goyo.vim'
+"fatih/vim-go
+""nsf/gocode
 
-" call plug#end()
+
+call plug#end()
 
 "
 " ==============================
@@ -56,16 +45,12 @@ syntax on
 " ==============================
 "
 set number " Display line numbers on the left
-set colorcolumn=81,121 " Set a column at 81 chars wide
+"set colorcolumn=81,121 " Set a column at 81 chars wide
 set encoding=utf-8 nobomb
 set noerrorbells " Disable error bells
 set guifont=Inconsolata\ for\ Powerline
-let g:syntastic_always_populate_loc_list = 1
 set confirm " confim instead of error when leaving unsaved file
 "set mouse=a " Enable use of the mouse for all modes
-let g:startify_custom_header = map(split(system('fortune -as | cowsay -f small'), '\n'), '"   ". v:val') + ['','']
-let g:startify_change_to_vcs_root = 1
-let g:ctrlp_reuse_window  = 'startify'
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_ " Show “invisible” characters
 set list
 set cursorline " Highlight current line
@@ -79,9 +64,6 @@ set tabstop=4 " Make tabs as wide as two spaces
 syntax enable
 set background=dark
 syntax on " Enable syntax highlighting
-let g:solarized_termcolors=256
-let macvim_skip_colorscheme=1
-" let g:solarized_termtrans=1
 
 
 "
@@ -109,12 +91,17 @@ endif
 "	Airline Settings
 " ==============================
 "
-"let g:airline_powerline_fonts = 1
-"let g:airline#extensions#hunks#enabled=0
-"let g:airline_section_x='%{fugitive#statusline()}'
-"let g:airline_section_y=''
-"let g:airline_theme='dark'
-"let g:Powerline_symbols = 'fancy'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='luna'
+let g:Powerline_symbols = 'fancy'
+
+
+"  nathanaelkane/vim-indent-guides
+let g:indent_guides_enable_on_vim_startup = 1
+
+filetype plugin on
+
 
 "
 " ==============================
@@ -141,8 +128,8 @@ set noeol
 "	Keybindings and Mappings
 " ==============================
 "
-let mapleader = "\<Space>"
-let g:mapleader = "\<Space>"
+let mapleader = "-<Space>"
+let g:mapleader = "-<Space>"
 
 noremap <leader>W :w !sudo tee % > /dev/null<CR> " Save a file as root (,W)
 
@@ -162,8 +149,7 @@ inoremap jk <esc> " jk is escape
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 
-nnoremap <F3> :NumbersToggle<CR>
-nnoremap <F4> :NumbersOnOff<CR>
+nnoremap <F3> :set invnumber<CR>
 
 command Wq wq
 command Q q

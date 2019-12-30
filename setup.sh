@@ -1,5 +1,10 @@
 #!/bin/zsh
 
+print -P "%F{orange}Try to grant Terminal access in...%f"
+print -P "%F{orange}System Preferences > Security & Privacy > Privacy > Full Disk Access%f"
+print -P "%F{orange}Systemeinstellungen > Sicherheit > Datenschutz > Festplattenvollzugriff%f"
+print -P "%F{orange}Unlock the system preference panel, by clicking the lock at the bottom left and filling in your password. Then either drag and drop Terminal.app onto the window, or navigate to it by clicking the plus sign (+)%f"
+
 print -P "%F{green}Checking whether SSH key already exists...%f"
 if [[ ! -a ~/.ssh/id_rsa ]]; then
     print -P "%F{green}  Creating an SSH key for you...%f"
@@ -53,6 +58,7 @@ apps=(
   bash-completion
   zsh
   neofetch
+  ansible
 )
 brew install ${apps[@]}
 
