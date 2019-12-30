@@ -38,6 +38,7 @@ export GREP_OPTIONS="--color=auto";
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 export GOPATH="$HOME/go"
 export DOCKER_HOST=unix:///var/run/docker.sock
+export ANSIBLE_VAULT_PASSWORD_FILE="~/.ansiblevault"
 
 #########################################
 # zsh-specific                          #
