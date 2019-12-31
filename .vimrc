@@ -27,8 +27,6 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-sensible'
 Plug 'ap/vim-css-color'
 Plug 'scrooloose/nerdcommenter'
-" Plug 'ludovicchabant/vim-gutentags'
-" Plug 'terryma/vim-multiple-cursors'
 " Plug 'fatih/vim-go'
 " Plug 'majutsushi/tagbar'
 " Plug 'bronson/vim-trailing-whitespace'
@@ -54,7 +52,7 @@ set confirm " confim instead of error when leaving unsaved file
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_ " Show “invisible” characters
 set list
 set cursorline " Highlight current line
-set tabstop=4 " Make tabs as wide as two spaces
+set tabstop=4 " Make tabs as wide as four spaces
 
 "
 " ==============================
@@ -114,11 +112,13 @@ set nowritebackup
 set lazyredraw
 set binary
 set noeol
+set expandtab
 
-"let g:syntastic_php_checkers = ['php', 'phpcs']
-"let g:syntastic_php_phpcs_args="--report=csv --standard=WordPress"
+" Uncomment the following to have Vim jump to the last position when reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif
 
-"let g:phpcomplete_parse_docblock_comments = 1
 
 "let g:go_fmt_command = "goimports"
 

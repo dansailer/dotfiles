@@ -39,6 +39,7 @@ plugins=(
     npm
     yarn
     jira
+    zsh-completions
 )
 
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
@@ -46,23 +47,24 @@ for file in $HOME/.dotfiles/sourced/*; do
    source "$file"
 done
 
+autoload -U compinit && compinit
+
 if (( $+commands[tag] )); then
 	tag() { command tag "$@"; source ${TAG_ALIAS_FILE:-/tmp/tag_aliases} 2>/dev/null }
 	alias ag=tag
 fi
 
-PATH=${PATH}:/usr/local/bin
-PATH=${PATH}:/usr/bin
-PATH=${PATH}:/bin
-PATH=${PATH}:/usr/sbin
-PATH=${PATH}:/sbin
+#PATH=${PATH}:/usr/local/bin
+#PATH=${PATH}:/usr/bin
+#PATH=${PATH}:/bin
+#PATH=${PATH}:/usr/sbin
+#PATH=${PATH}:/sbin
 PATH=${PATH}:/usr/local/git/bin
 PATH=${PATH}:"$HOME"/.dotfiles/misc
 PATH=${PATH}:"$HOME"/.dotfiles/bin
-PATH=${PATH}:"$HOME"/.dotfiles/bin/t
 PATH=${PATH}:"$HOME"/go/bin
 PATH=${PATH}:"$HOME"/.yarn/bin
-PATH=${PATH}:"/usr/local/sbin"
+#PATH=${PATH}:"/usr/local/sbin"
 PATH=${PATH}:"usr/local/share/npm/bin"
 
 export PATH=${PATH}
