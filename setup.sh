@@ -378,7 +378,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.dotfiles
 print -P "\n%F{green}Setting up ZSH plugins...%f"
 cd $HOME/.dotfiles/zsh-custom/plugins
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
-git clone https://github.com/zsh-users/zsh-completions $HOME/.dotfiles/zsh-custom/plugins/zsh-completions
+git clone git://github.com/zsh-users/zsh-completions.git
 
 
 print -P "\n%F{green}Setting up ZSH as default shell...%f"
