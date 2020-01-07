@@ -52,6 +52,7 @@ apps=(
   trash
   mackup
   node
+  yarn
   the_silver_searcher
   minikube
   hugo
