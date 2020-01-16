@@ -99,6 +99,14 @@ function digga() {
 	dig +nocmd "$1" any +multiline +noall +answer;
 }
 
+# Generate random password with given length
+function randpasswd() {
+    LC_ALL=C tr -dc 'A-Za-z0-9_-+$%*()-+=' < /dev/urandom | head -c${1:-32};echo;
+}
+function randalphanumpasswd() {
+    LC_ALL=C tr -dc 'A-Za-z0-9' < /dev/urandom | head -c${1:-32};echo;
+}
+
 # Show all the names (CNs and SANs) listed in the SSL certificate
 # for a given domain
 function getcertnames() {

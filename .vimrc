@@ -149,7 +149,7 @@ inoremap jk <esc> " jk is escape
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 
-nnoremap <F3> :set invnumber<CR>
+nnoremap <F3> :set invnumber <bar> set list!<CR>
 
 command Wq wq
 command Q q

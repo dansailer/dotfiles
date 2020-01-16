@@ -8,8 +8,8 @@
 #    ░░░░░  ░░    ░░   ░░░░░   ░░░░░░  ░░░   ░░   ░░   ░░  ░░░░░
 
 [user]
-    name = Daniel Sailer
-    email = daniel@sailer.com.au
+	name = Daniel Sailer
+	email = daniel@sailer.com.au
     github = dansailer
 
 [credential]
@@ -17,7 +17,7 @@
 
 [core]
     editor = vim
-    excludesfile = ~/.dotfiles/.global-ignore
+	excludesfile = /Users/dansailer/.dotfiles/.global-ignore
     attributesfile = ~/.dotfiles/.gitattributes
 
     # Enable parallel I/O for operations like "git diff".
@@ -72,12 +72,12 @@
     untracked = cyan
 
 [difftool "sourcetree"]
-    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-    path = 
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
 
 [mergetool "sourcetree"]
-    cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-    trustExitCode = true
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 
 [alias]
     # Remove branches that have already been merged with master
@@ -237,3 +237,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[commit]
+	template = /Users/dansailer/.stCommitMsg

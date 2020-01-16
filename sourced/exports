@@ -39,6 +39,7 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 export GOPATH="$HOME/go"
 export DOCKER_HOST=unix:///var/run/docker.sock
 export ANSIBLE_VAULT_PASSWORD_FILE="~/.ansiblevault"
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 #########################################
 # zsh-specific                          #

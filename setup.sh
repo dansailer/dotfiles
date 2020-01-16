@@ -35,6 +35,11 @@ fi
 print -P "\n%F{green}Updating Homebrew recipes...%f"
 brew update
 
+print -P "\n%F{green}Tapping additional Homebrew cellars...%f"
+brew tap homebrew/cask-drivers
+brew tap AdoptOpenJDK/openjdk
+brew tap homebrew/cask-fonts
+
 print -P "\n%F{green}Installing Git recipes...%f"
 apps=(
   git
@@ -61,12 +66,13 @@ apps=(
   neofetch
   ansible
   watchexec
+  maven
 )
 brew install ${apps[@]}
 
 print -P "\n%F{green}Configuring Git...%f"
-git config --global user.name "Brad Parbs"
-git config --global user.email brad@bradparbs.com
+git config --global user.name "Daniel Sailer"
+git config --global user.email daniel@sailer.com.au
 
 print -P "\n%F{green}Installing Applications via casks...%f"
 brew install cask
@@ -75,7 +81,7 @@ apps=(
   kitematic
   visual-studio-code
   slack
-  adoptopenjdk
+  adoptopenjdk8
   postman
   intellij-idea
   insomnia
@@ -90,7 +96,7 @@ apps=(
   kitty
   graphiql
   aerial
-  caffeine
+  KeepingYouAwake
   keka
   appcleaner
   macdown
@@ -115,13 +121,15 @@ apps=(
   https://www.corecode.io/macupdater/casks/citrix-workspace.rb
   ubiquiti-unifi-controller
   tiptoi-manager
+  keystore-explorer
 )
-# Install apps to /Applications
-brew tap homebrew/cask-drivers
 brew cask install --appdir="/Applications" ${apps[@]}
 
+print -P "\n%F{green}Creating JDK8 link to adoptopenjdk..."
+rm -f /Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk
+sudo ln -s /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk /Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk
+
 print -P "\n%F{green}Install fonts...%f"
-brew tap homebrew/cask-fonts
 brew cask install font-roboto font-robotomono-nerd-font-mono font-robotomono-nerd-font font-roboto-mono-for-powerline font-sourcecodepro-nerd-font-mono font-source-code-pro-for-powerline font-source-code-pro font-sourcecodepro-nerd-font font-liberation-mono-for-powerline font-liberation-sans font-liberationmono-nerd-font font-liberationmono-nerd-font-mono
 
 print -P "\n%F{green}Cleaning up Brew...%f"
@@ -380,6 +388,7 @@ print -P "\n%F{green}Setting up ZSH plugins...%f"
 cd $HOME/.dotfiles/zsh-custom/plugins
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
 git clone git://github.com/zsh-users/zsh-completions.git
+curl -sSo ./zsh-completions/src/_ansible-vault https://raw.githubusercontent.com/clarketm/zsh-completions/master/src/_ansible-vault
 
 
 print -P "\n%F{green}Setting up ZSH as default shell...%f"
