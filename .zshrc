@@ -21,24 +21,30 @@ unsetopt nomatch
 setopt APPEND_HISTORY
 setopt INTERACTIVE_COMMENTS
 
+#plugins=(
+#    git
+#    git-extras
+#    github
+#    node
+#    osx
+#    rake
+#    python
+#    vagrant
+#    z
+#    zsh-syntax-highlighting
+#    docker
+#    docker-compose
+#    kubectl
+#    minikube
+#    npm
+#    yarn
+#    jira
+#    zsh-completions
+#)
+
+
 plugins=(
-    git
-    git-extras
-    github
-    node
-    osx
     rake
-    python
-    vagrant
-    z
-    zsh-syntax-highlighting
-    docker
-    docker-compose
-    kubectl
-    minikube
-    npm
-    yarn
-    jira
     zsh-completions
 )
 

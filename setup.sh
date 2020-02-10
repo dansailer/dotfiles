@@ -60,6 +60,7 @@ apps=(
   yarn
   the_silver_searcher
   minikube
+  minishift
   hugo
   bash-completion
   zsh
@@ -67,6 +68,9 @@ apps=(
   ansible
   watchexec
   maven
+  nvm
+  gpg
+  git-crypt
 )
 brew install ${apps[@]}
 
@@ -122,6 +126,7 @@ apps=(
   ubiquiti-unifi-controller
   tiptoi-manager
   keystore-explorer
+  losslesscut
 )
 brew cask install --appdir="/Applications" ${apps[@]}
 
