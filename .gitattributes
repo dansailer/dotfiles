@@ -12,7 +12,7 @@
 ##   Handle line endings automatically for files detected as
 ##   text and leave all files detected as binary untouched.
 ##   This will handle all files NOT defined below.
-*                 text=auto
+*                 text=auto -crlf
 # Source code
 *.bash            text eol=lf
 *.bat             text eol=crlf

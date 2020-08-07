@@ -59,18 +59,19 @@ apps=(
   node
   yarn
   the_silver_searcher
-  minikube
-  minishift
   hugo
   bash-completion
   zsh
   neofetch
+  python
   ansible
   watchexec
   maven
   nvm
   gpg
   git-crypt
+  jenv
+  coreutils
 )
 brew install ${apps[@]}
 
@@ -82,15 +83,15 @@ print -P "\n%F{green}Installing Applications via casks...%f"
 brew install cask
 apps=(
   docker
-  kitematic
   visual-studio-code
   slack
+  microsoft-teams
   adoptopenjdk8
   postman
   intellij-idea
   insomnia
   quicklook-json
-  tunnelblick
+  viscosity
   iina
   telegram
   soapui
@@ -113,6 +114,7 @@ apps=(
   vagrant
   virtualbox
   virtualbox-extension-pack
+  minishift
   skype
   sequel-pro
   qlmarkdown
@@ -131,6 +133,7 @@ apps=(
 brew cask install --appdir="/Applications" ${apps[@]}
 
 print -P "\n%F{green}Creating JDK8 link to adoptopenjdk..."
+print -P "\n%F{green}... needed for UnifiController and others..."
 rm -f /Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk
 sudo ln -s /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk /Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk
 
